@@ -125,7 +125,7 @@ class Sister(db.Model):
     id = db.Column(Integer, primary_key=True)
     name = db.Column(String(80), nullable=False)
     brothers = relationship("Brother",
-                    secondary=association_table
+                    secondary=association_table,
                     back_populates="sisters") # this line is so it updates the field when Sister is updated
                     
     def __ref__(self):
